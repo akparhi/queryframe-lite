@@ -24,13 +24,13 @@ Queryframe uses a number of open source projects under the hood:
 Install the dependencies and follow the guide below.
 
 ```sh
-pnpm add @inkheart/queryframe
+pnpm add @inkheart/queryframe-lite
 ```
 
 ## Example Usage
 
 ```typescript
-import { createQueryframeBuilder, z } from '@inkheart/queryframe'
+import { createQueryframeBuilder, z } from '@inkheart/queryframe-lite'
 
 const builder = createQueryframeBuilder({
   baseURL: 'https://api.sampleapis.com',
@@ -50,21 +50,6 @@ const { queryframe } = builder.createQueryframe({
 })
 
 export default queryframe
-export const queryClient = builder.queryClient
-export { QueryClientProvider } from '@inkheart/queryframe'
-```
-
-#### useQuery interface
-
-```typescript
-import queryframe from '...'
-
-const { data } = await queryframe.getExpenseCategories.useQuery(
-  {},
-  {
-    refetchInterval: data => 1000,
-  },
-)
 ```
 
 #### Handle interface
@@ -82,18 +67,18 @@ try {
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[npm-shield]: https://img.shields.io/npm/v/@inkheart/queryframe?style=for-the-badge
-[npm-url]: https://www.npmjs.com/package/@inkheart/queryframe
+[npm-shield]: https://img.shields.io/npm/v/@inkheart/queryframe-lite?style=for-the-badge
+[npm-url]: https://www.npmjs.com/package/@inkheart/queryframe-lite
 [contributors-shield]: https://img.shields.io/github/contributors/akparhi/queryframe.svg?style=for-the-badge
-[contributors-url]: https://github.com/akparhi/queryframe/graphs/contributors
+[contributors-url]: https://github.com/akparhi/queryframe-lite/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/akparhi/queryframe.svg?style=for-the-badge
-[forks-url]: https://github.com/akparhi/queryframe/network/members
+[forks-url]: https://github.com/akparhi/queryframe-lite/network/members
 [stars-shield]: https://img.shields.io/github/stars/akparhi/queryframe.svg?style=for-the-badge
-[stars-url]: https://github.com/akparhi/queryframe/stargazers
+[stars-url]: https://github.com/akparhi/queryframe-lite/stargazers
 [issues-shield]: https://img.shields.io/github/issues/akparhi/queryframe.svg?style=for-the-badge
-[issues-url]: https://github.com/akparhi/queryframe/issues
+[issues-url]: https://github.com/akparhi/queryframe-lite/issues
 [license-shield]: https://img.shields.io/github/license/akparhi/queryframe.svg?style=for-the-badge
-[license-url]: https://github.com/akparhi/queryframe/blob/main/LICENSE
+[license-url]: https://github.com/akparhi/queryframe-lite/blob/main/LICENSE
 [Zod]: https://zod.dev/
 [Redaxios]: https://github.com/developit/redaxios
 [Zocker]: https://github.com/LorisSigrist/zocker/
