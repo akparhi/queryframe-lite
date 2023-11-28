@@ -15,7 +15,6 @@ Queryframe lite is a typesafe API SDK generator for REST endpoints.
 
 Queryframe uses a number of open source projects under the hood:
 
-- [ReactQuery] - v5!
 - [Zod] - for schemas
 - [Zocker] - 2kb library to generate mock data
 - [Redaxios] - minimal fetch wrapper with axios interface
@@ -95,7 +94,6 @@ try {
 [issues-url]: https://github.com/akparhi/queryframe/issues
 [license-shield]: https://img.shields.io/github/license/akparhi/queryframe.svg?style=for-the-badge
 [license-url]: https://github.com/akparhi/queryframe/blob/main/LICENSE
-[ReactQuery]: https://tanstack.com/query/v5
 [Zod]: https://zod.dev/
 [Redaxios]: https://github.com/developit/redaxios
 [Zocker]: https://github.com/LorisSigrist/zocker/
