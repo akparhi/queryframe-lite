@@ -54,15 +54,15 @@ export default queryframe
 export const init = async () => {
   setTimeout(async () => {
     try {
-      const result = await api.update.handle({
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const result = await queryframe.update.handle({
         query: { a: 'f' },
         body: {
           name: 'hu',
         },
       })
 
-      // eslint-disable-next-line no-console
-      console.log(data)
+      // console.log(data)
       // const {data} =api.update.useQuery({
       //   headers: { a: 'f' },
       //   query: { a: 'f' },

@@ -1,7 +1,7 @@
 {
   "name": "@inkheart/queryframe-lite",
   "description": "Typesafe SDK generator for REST APIs",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "private": false,
   "publishConfig": {
     "access": "public",
@@ -33,21 +33,21 @@
   "dependencies": {
     "redaxios": "^0.5.1",
     "zod": "^3.22.4",
-    "zodock": "^0.0.13"
+    "zodock": "^0.0.14"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
-    "@types/eslint": "^8.44.7",
-    "@typescript-eslint/eslint-plugin": "^6.13.1",
-    "@typescript-eslint/parser": "^6.13.1",
-    "eslint": "^8.54.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-prettier": "^5.0.1",
-    "prettier": "^3.1.0",
-    "prettier-plugin-tailwindcss": "^0.5.7",
+    "@types/eslint": "^8.56.2",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.2.4",
+    "prettier-plugin-tailwindcss": "^0.5.11",
     "tsup": "^8.0.1",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.3"
   },
   "eslintConfig": {
     "extends": [

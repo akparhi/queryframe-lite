@@ -7,11 +7,8 @@ type ZodParser<T = any> = {
 
 export type DataParser<T = any> = ZodParser<T>
 
-export type InferDataParser<Val extends DataParser> = Val extends DataParser<
-  infer Output
->
-  ? Output
-  : any
+export type InferDataParser<Val extends DataParser> =
+  Val extends DataParser<infer Output> ? Output : any
 
 /**
  *  This handler is used to validate data from the params, query, body or output
