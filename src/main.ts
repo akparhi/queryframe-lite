@@ -90,4 +90,5 @@ class QueryframeBuilder {
 export const createQueryframeBuilder = (config: QueryframeBuilderParams) =>
   new QueryframeBuilder(config)
 
-export { z, redaxios, HttpMethods }
+export { z, redaxios, HttpMethods, QueryframeBuilder }
+export type { QueryframeBuilderParams }
