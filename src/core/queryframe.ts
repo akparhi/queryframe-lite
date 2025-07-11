@@ -133,7 +133,7 @@ export class QueryframeHandler<
           this.handleError(
             new QueryframeError({
               code: NETWORK_ERROR[status] || QUERYFRAME_ERROR.API_ERROR,
-              message: error?.message || 'axios error',
+              message: error?.message || `${status} error`,
               cause: error.data,
             }),
             data,
