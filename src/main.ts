@@ -30,6 +30,10 @@ class QueryframeBuilder {
     this.ctx = config
   }
 
+  public updateConfig = (update: Partial<QueryframeBuilderParams>) => {
+    this.ctx = { ...this.ctx, ...update }
+  }
+
   public createQuery: CreateHandler = routeParams =>
     new QueryframeHandler({
       onError: this.ctx.onError || (() => null),
