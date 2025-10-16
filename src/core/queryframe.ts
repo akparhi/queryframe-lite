@@ -134,7 +134,7 @@ export class QueryframeHandler<
             new QueryframeError({
               code: NETWORK_ERROR[status] || QUERYFRAME_ERROR.API_ERROR,
               message: error?.message || `${status} error`,
-              cause: error.data,
+              cause: error.response,
             }),
             data,
           )
