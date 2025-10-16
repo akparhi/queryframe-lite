@@ -1,7 +1,7 @@
 {
   "name": "@inkheart/queryframe-lite",
   "description": "Typesafe SDK generator for REST APIs",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": false,
   "publishConfig": {
     "access": "public",
@@ -31,7 +31,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "redaxios": "^0.5.1",
+    "axios": "^1.12.2",
     "zod": "^3.22.4",
     "zodock": "^0.0.14"
   },

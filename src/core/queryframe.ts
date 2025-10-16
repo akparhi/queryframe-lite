@@ -1,4 +1,4 @@
-import redaxios from 'redaxios'
+import axios from 'axios'
 import { ZodType } from 'zod'
 import { createMock } from 'zodock'
 import { NETWORK_ERROR, QUERYFRAME_ERROR, QueryframeError } from '../error'
@@ -118,26 +118,29 @@ export class QueryframeHandler<
       //  Begin resolution
       if (this.ctx.baseURL) {
         try {
-          const { data: result } = await redaxios({
-            headers: this.ctx.headers?.(),
+          const { data: result } = await axios({
+            url: pathParams(this.ctx.endpoint, data.params),
             method: this.ctx.method,
             baseURL: this.ctx.baseURL,
-            url: pathParams(this.ctx.endpoint, data.params),
+            headers: this.ctx.headers?.(),
             params: data.query,
             data: data.body,
           })
           res = this.ctx.transformResponse(result)
           res = await this.ctx.refract({ ...data, output: res })
         } catch (error: any) {
-          const { status }: { status: keyof typeof NETWORK_ERROR } = error
-          this.handleError(
-            new QueryframeError({
-              code: NETWORK_ERROR[status] || QUERYFRAME_ERROR.API_ERROR,
-              message: error?.message || `${status} error`,
-              cause: error.response,
-            }),
-            data,
-          )
+          if (axios.isAxiosError(error)) {
+            this.handleError(
+              new QueryframeError({
+                code:
+                  NETWORK_ERROR[error.status as keyof typeof NETWORK_ERROR] ||
+                  QUERYFRAME_ERROR.API_ERROR,
+                message: error?.message || `${error.status} error`,
+                cause: error.response,
+              }),
+              data,
+            )
+          } else throw error
         }
       } else res = await this.ctx.refract(data)
 

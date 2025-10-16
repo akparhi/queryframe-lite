@@ -1,4 +1,4 @@
-import redaxios from 'redaxios'
+import axios from 'axios'
 import { z } from 'zod'
 import { QueryframeHandler, type CreateHandler } from './core'
 import { type ErrorHandler } from './error'
@@ -94,5 +94,5 @@ class QueryframeBuilder {
 export const createQueryframeBuilder = (config: QueryframeBuilderParams) =>
   new QueryframeBuilder(config)
 
-export { z, redaxios, HttpMethods, QueryframeBuilder }
+export { z, axios, HttpMethods, QueryframeBuilder }
 export type { QueryframeBuilderParams }

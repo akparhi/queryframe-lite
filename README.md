@@ -17,7 +17,7 @@ Queryframe uses a number of open source projects under the hood:
 
 - [Zod] - for schemas
 - [Zocker] - 2kb library to generate mock data
-- [Redaxios] - minimal fetch wrapper with axios interface
+- [Axios] - minimal fetch wrapper with a clean typed API
 
 ## Installation
 
@@ -80,5 +80,5 @@ try {
 [license-shield]: https://img.shields.io/github/license/akparhi/queryframe.svg?style=for-the-badge
 [license-url]: https://github.com/akparhi/queryframe-lite/blob/main/LICENSE
 [Zod]: https://zod.dev/
-[Redaxios]: https://github.com/developit/redaxios
+[Axios]: https://github.com/axios/axios
 [Zocker]: https://github.com/LorisSigrist/zocker/

@@ -29,24 +29,25 @@ export const NETWORK_ERROR = {
  * Queryframe error documentation
  *
  */
-export class QueryframeError extends Error {
-  public readonly cause?: Error
-  public readonly code
+export class QueryframeError {
+  readonly name = 'QueryframeError' as const
+  readonly message!: string
+  readonly code: QUERYFRAME_ERROR
+  readonly cause?: unknown
 
   constructor(opts: {
     code: QUERYFRAME_ERROR
     message: string
     cause?: unknown
   }) {
-    const cause = opts.cause
-    const message = opts.message
-
-    super(message, {
-      cause: cause instanceof ZodError ? cause.flatten() : cause,
-    })
-
+    const normalizedCause =
+      opts.cause instanceof ZodError ? opts.cause.flatten() : opts.cause
+    this.message = opts.message
     this.code = opts.code
-    this.name = 'QueryframeError'
+    if (normalizedCause !== undefined) (this as any).cause = normalizedCause
+
+    // Ensure instances have the right prototype (mostly redundant, but safe)
+    Object.setPrototypeOf(this, QueryframeError.prototype)
   }
 }
 
